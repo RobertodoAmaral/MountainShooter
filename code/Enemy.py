@@ -1,8 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from code.Const import ENTITY_SPEED, ENTITY_SHOT_DELAY
+from code.Const import ENTITY_SPEED, ENTITY_SHOT_DELAY, WIN_HEIGHT
 from code.EnemyShot import EnemyShot
 from code.Entity import Entity
+import pygame
 
 
 class Enemy(Entity):
@@ -18,6 +19,7 @@ class Enemy(Entity):
         if self.shot_delay == 0:
             self.shot_delay = ENTITY_SHOT_DELAY[self.name]
             return EnemyShot(name=f'{self.name}Shot', position=(self.rect.centerx, self.rect.centery))
+
 
 class Enemy3(Entity):
     def __init__(self, name: str, position: tuple):
